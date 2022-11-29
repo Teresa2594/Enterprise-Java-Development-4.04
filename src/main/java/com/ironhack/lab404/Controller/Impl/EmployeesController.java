@@ -34,21 +34,21 @@ public class EmployeesController implements IEmployeesController {
 
     //  *****************************************************  POST  ******************************************************
 
-    @PostMapping("/employees")
+    @PostMapping("/Employees")
     @ResponseStatus(HttpStatus.CREATED)
-    public void saveEmployees(Employees employee) {
+    public void saveEmployees(@RequestBody Employees employee) {
         employeesRepository.save(employee);
     }
 
     //  *****************************************************  PATCH  *****************************************************
 
-    @PatchMapping("/employees/department/{employeeId}")
+    @PatchMapping("/Employees/department/{employeeId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateEmployeesDepartment(@RequestBody EmployeesDepartmentDTO employeesDepartmentDTO, @PathVariable Integer employeeId) {
         employeesService.updateEmployeesDepartment(employeesDepartmentDTO.getDepartment(), employeeId);
     }
 
-    @PatchMapping("/employees/status/{employeeId}")
+    @PatchMapping("/Employees/status/{employeeId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateEmployeesStatus(@RequestBody EmployeesStatusDTO employeesStatusDTO, @PathVariable Integer employeeId) {
         employeesService.updateEmployeesStatus(employeesStatusDTO.getStatus(), employeeId);

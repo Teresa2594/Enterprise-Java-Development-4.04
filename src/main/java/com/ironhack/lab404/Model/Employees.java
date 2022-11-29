@@ -25,11 +25,11 @@ public class Employees {
         this.status = status;
     }
 
-    public Integer getEmployee_id() {
+    public Integer getEmployeeId() {
         return employeeId;
     }
 
-    public void setEmployee_id(Integer employeeId) {
+    public void setEmployeeId(Integer employeeId) {
         this.employeeId = employeeId;
     }
 
